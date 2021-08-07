@@ -12,11 +12,11 @@ const makeTransaction = transaction => {
 
         setTimeout(() => {
             if (canProcess) {
-                const result = { id, delay }
+                const result = {id, delay}
                 resolve(result);
-            } else {
-                reject(transaction.id);
             }
+            
+            reject(transaction.id);
         }, delay);
     });
 
